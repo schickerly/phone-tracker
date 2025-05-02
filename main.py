@@ -46,3 +46,7 @@ def get_latest_location(device_id: str):
     if row:
         return {"device_id": device_id, "lat": row[0], "lng": row[1], "timestamp": row[2]}
     return {"error": "No location found"}
+
+@app.get("/")
+def root():
+    return {"status": "running"}
